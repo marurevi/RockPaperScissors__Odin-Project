@@ -1,7 +1,7 @@
 const computerChoiceDisplay = document.getElementById('computer-choice');
 const yourChoiceDisplay = document.getElementById('your-choice');
 const resultDisplay = document.getElementById('result');
-const possibleChoice = document.querySelectorAll('button');
+const possibleChoice = document.querySelectorAll('.choices');
 
 let userChoice;
 let computerChoice;
