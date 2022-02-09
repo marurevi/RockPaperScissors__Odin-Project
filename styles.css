@@ -1,0 +1,9 @@
+#body {
+background-color: dimgray;
+color: rgb(255, 115, 0);
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+#computer-choice, #your-choice, #result {
+    color: whitesmoke;
+}
