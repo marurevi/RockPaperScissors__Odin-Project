@@ -3,7 +3,32 @@ background-color: dimgray;
 color: rgb(255, 115, 0);
 font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
+display: flex;
+flex-direction: column;
+align-items: center;
+margin: 30px 50px 10px 50px;
 }
 #computer-choice, #your-choice, #result {
     color: whitesmoke;
+}
+.choices{
+    color:whitesmoke;
+    border-radius: 30px;
+    background-color:rgb(53, 50, 50);
+    font-size: medium;
+    padding: 5px;
+}
+#header{
+    color: whitesmoke;
+    text-shadow: 50px;
+    background-color: rgb(53, 50, 50);
+    padding: 5px 50px 5px 50px;
+}
+#main{
+    display: flexbox;
+    align-content: center;
+}
+#footer{
+    color: whitesmoke;
+    margin-top: 50px;
 }
