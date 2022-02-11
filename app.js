@@ -1,11 +1,8 @@
-const computerChoiceDisplay = document.getElementById('computer-choice');
+const compDisplay = document.getElementById('computer-choice');
 const yourChoiceDisplay = document.getElementById('your-choice');
 const resultDisplay = document.getElementById('result');
 const possibleChoice = document.querySelectorAll('.choices');
 
-let userChoice;
-let computerChoice;
-let result;
 
 possibleChoice.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
     userChoice = e.target.id;
@@ -14,43 +11,42 @@ possibleChoice.forEach(possibleChoice => possibleChoice.addEventListener('click'
     getResult();
 } ));
 
+
 function generateComputerChoice () {
     const randomNumber = Math.floor(Math.random() * 3 +1) ;
     switch(randomNumber){
         case 1:
-            computerChoice = 'rock';
+            compChoice = 'rock';
             break;
         case 2:
-            computerChoice = 'paper';
+            compChoice = 'paper';
             break;
         case 3:
-            computerChoice = 'scissors';
+            compChoice = 'scissors';
             break;        
     }
-    computerChoiceDisplay.innerHTML = computerChoice;
+    compDisplay.innerHTML = compChoice;
 }
 
 function getResult(){
-    if (userChoice == computerChoice){
-        result = 'It is a draw!';
-    }
-    if (userChoice == 'rock' && computerChoice == 'paper'){
-        result = 'You lost!';
-    }
-    if (userChoice == 'rock' && computerChoice == 'scissors'){
-        result = 'You win!';
-    }
-    if (userChoice == 'paper' && computerChoice == 'rock'){
-        result = 'You win!';
-    }
-    if (userChoice == 'paper' && computerChoice == 'scissors'){
-        result = 'You lost!';
-    }
-    if (userChoice == 'scissors' && computerChoice == 'rock'){
-        result = 'You lost!';
-    }
-    if (userChoice == 'scissors' && computerChoice == 'paper'){
-        result = 'You win!';
+    switch (userChoice + compChoice){
+        case 'rockrock':
+        case 'paperpaper':
+        case 'scissorsscissors':
+            result = 'It is a draw!';
+            break;
+
+        case 'rockpaper':
+        case 'paperscissors':
+        case 'scissorsrock':
+            result = 'You lost!';
+            break;
+        case 'rockscissors':
+        case 'paperrock':
+        case 'scissorspaper':
+            result = 'You win!';
+            break;
     }
     resultDisplay.innerHTML = result;
 }
+
