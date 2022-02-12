@@ -6,22 +6,37 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body id="body">  
-    <header id="header">
-        <h1><shadow-t><strong>Let's play!</strong></shadow-t></h1>
-    </header>
-    <main id="main">
-        <h2>Computer Choice: <span id="computer-choice"></span></h2>
-        <h2>Your Choice: <span id="your-choice"></span></h2>
-        <h2>Result: <span id="result"></span></h2>
-
-        <button class="choices" id="rock">Rock</button>
-        <button class="choices" id="paper">Paper</button>
-        <button class="choices" id="scissors">Scissors</button>
-
-    </main>
-    <footer id="footer">
-        <small>2022 | Odin Project</small>
-    </footer>
-    <script src="game.js" charset="UTF-8"></script>    
+        <header id="header">
+            <h1><shadow-t><strong>Let's play!</strong></shadow-t></h1>
+        </header>
+        <div id="div">
+            <main id="main">
+                <h2>Computer Choice: <span id="computer-choice"></span></h2>
+                <h2>Your Choice: <span id="your-choice"></span></h2>
+                <h2>Result: <span id="result"></span></h2>
+    
+                <button class="choices" id="rock">Rock</button>
+                <button class="choices" id="paper">Paper</button>
+                <button class="choices" id="scissors">Scissors</button>
+            </main>
+            <aside id="aside">
+                <table id="table">
+                    <thead>
+                        <th>Player</th>
+                        <th>Computer</th>
+                    </thead>
+                    <tr>
+                        <td id="playerScore"></td>
+                        <td id="computerScore"></td>
+                    </tr>
+                    
+                </table>
+            </aside>
+        </div>
+        
+        <footer id="footer">
+            <small>2022 | Odin Project</small>
+        </footer>
+        <script src="game.js" charset="UTF-8"></script>    
     </body>
 </html>

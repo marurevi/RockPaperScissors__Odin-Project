@@ -25,11 +25,36 @@ margin: 30px 50px 10px 50px;
     padding: 5px 100px 5px 100px;
     border-radius: 25px;
 }
+#div {
+display: flex;
+flex-direction: row;
+}
 #main{
     display: flexbox;
     align-content: center;
 }
+#aside{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
 
+}
+table, th, td {
+    border: 2px solid whitesmoke;
+    background-color: rgb(53, 50, 50);
+    color: whitesmoke;
+    padding: 2px 5px 2px 5px;
+    text-align: center;
+}
+th {
+    color: rgb(255, 115, 0);
+    font-size: large;
+}
+#table{
+    width: 50%vw;
+    height: auto;
+    padding: 2px 5px 2px 5px;
+}
 #footer{
     color: whitesmoke;
     margin-top: 50px;
