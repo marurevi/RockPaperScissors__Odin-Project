@@ -17,8 +17,8 @@ possibleChoice.forEach((p) => p.addEventListener('click', (e) => {
     resultDisplay.innerHTML = result;
     if (result == 'You lost!') { computerScore+=1; }
     if (result == 'You win!') { playerScore+=1; }
-    computerScoreDisplay.innerHTML = computerScore;
-    playerScoreDisplay.innerHTML = playerScore;
+    computerScoreDisplay.innerHTML = computerScore ?? 0;
+    playerScoreDisplay.innerHTML = playerScore ?? 0;
     
 }))
 game()
@@ -71,9 +71,9 @@ function game () {
         
         if (sum >= 5) {
             if (winner == 'player') {
-                alert( 'YOU WIN THIS GAME!!!');
+               setTimeout(alert( 'YOU WIN THIS GAME!!!'), 5000);
             } else {
-                alert ('GAME OVER');
+                setTimeout(alert ('GAME OVER'), 5000);
             }
             playerScore = 0;
             computerScore = 0;
