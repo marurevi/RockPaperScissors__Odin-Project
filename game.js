@@ -8,21 +8,49 @@ const choices = ['Rock', 'Paper', 'Scissors'];
 let result, playerScore = 0, computerScore = 0;
 
 
-possibleChoice.forEach((p) => p.addEventListener('click', (e) => {
-    player = e.target.id;
+possibleChoice.forEach((p) => p.addEventListener('click', (x) => {
+    // Setting player and computer values
+    player = x.target.id;
     computer = computerChoice(); 
+    result = getResult();
+
     computerDisplay.innerHTML = computer;
     playerDisplay.innerHTML = player.charAt(0).toUpperCase() + player.slice(1);
-    result = getResult();
     resultDisplay.innerHTML = result;
+
+    // Setting score table
+
     if (result == 'You lost!') { computerScore+=1; }
     if (result == 'You win!') { playerScore+=1; }
+
     computerScoreDisplay.innerHTML = computerScore ?? 0;
     playerScoreDisplay.innerHTML = playerScore ?? 0;
-    
-}))
-game()
 
+    // Getting the winner of an 'x' numbers of rounds.
+    let winner = '', sum = 0;
+
+    max = Math.max (playerScore, computerScore);
+    sum = playerScore + computerScore;
+
+    if (max == playerScore) { 
+        winner = 'player';
+    } else {
+        winner = 'computer';
+    }
+    
+    // After 5 rounds the game ends with an alert message and reseting all values on Score table.
+    if (sum >= 5) {
+        if (winner == 'player') {
+            alert( 'YOU WIN THIS GAME!!!');
+            } else {
+            alert ('GAME OVER');
+        }
+        playerScore = 0;
+        computerScore = 0;
+    } 
+ }));
+
+ // Secondary functions used to simplify the code into the listener event.
 
 function computerChoice () {
     let computer = choices[Math.floor(Math.random(choices)*3)];
@@ -52,34 +80,4 @@ function getResult(){
     }
     return result;
 }
-
-
-// Creation of Score Table
-
-function game () {
-    let winner = '';
-    let sum = 0;
-    possibleChoice.forEach((p) => p.addEventListener('click', (e) => {
-        e = Math.max (playerScore, computerScore);
-        sum = playerScore + computerScore;
-
-        if (e == playerScore) { 
-            winner = 'player';
-        }else {
-            winner = 'computer';
-        }
-        
-        if (sum >= 5) {
-            if (winner == 'player') {
-               setTimeout(alert( 'YOU WIN THIS GAME!!!'), 5000);
-            } else {
-                setTimeout(alert ('GAME OVER'), 5000);
-            }
-            playerScore = 0;
-            computerScore = 0;
-        } 
-    }) )
-}
-
-
 
